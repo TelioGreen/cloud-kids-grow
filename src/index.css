@@ -140,7 +140,8 @@
   /* Buttons */
   .btn-playful {
     @apply relative overflow-hidden rounded-full text-white font-semibold px-8 py-4 transition-all duration-300;
-    background-image: var(--gradient-playful); 
+    /* avoids relying on Tailwind gradient stop utilities (from-, via-, to-) */
+    background-image: var(--gradient-playful);
   }
   .btn-playful:hover { transform: scale(1.05); box-shadow: var(--shadow-card); }
 
@@ -190,7 +191,7 @@
 
   /* HSL-only SVG data URL (primary-ish blue with 0.1 opacity) */
   .bg-pattern-waves {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%68%73%6C%28%32%31%31%20%31%30%30%25%20%37%31%25%20%2F%20%30%2E%31%29'%3E%3Cpath d='M30 30c11.046 0 20-8.954 20-20S41.046-10 30-10 10 1.046 10 12s8.954 18 20 18zm0 20c11.046 0 20-8.954 20-20s-8.954-20-20-20S10 21.046 10 32s8.954 18 20 18z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='hsl(211 100% 71%25 / 0.1)'%3E%3Cpath d='M30 30c11.046 0 20-8.954 20-20S41.046-10 30-10 10 1.046 10 12s8.954 18 20 18zm0 20c11.046 0 20-8.954 20-20s-8.954-20-20-20S10 21.046 10 32s8.954 18 20 18z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 
   .bg-gradient-hero { background-image: var(--gradient-hero); }
