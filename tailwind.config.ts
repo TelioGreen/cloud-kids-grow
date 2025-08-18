@@ -18,8 +18,8 @@ export default {
 				'2xl': '1400px'
 			}
 		},
-		extend: {
-			colors: {
+                extend: {
+                        colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -62,8 +62,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
-			},
+				},
+                        fontFamily: {
+                                sans: ["'Nunito'", 'sans-serif'],
+                                heading: ["'Fredoka'", 'cursive'],
+                        },
+
                         borderRadius: {
                                 lg: 'var(--radius)',
                                 md: 'calc(var(--radius) - 2px)',
