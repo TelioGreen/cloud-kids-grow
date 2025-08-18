@@ -62,28 +62,27 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+        fontFamily: {
+                sans: ["'Nunito'", 'sans-serif'],
+                heading: ["'Fredoka'", 'cursive'],
+        },
+        borderRadius: {
+                lg: 'var(--radius)',
+                md: 'calc(var(--radius) - 2px)',
+                sm: 'calc(var(--radius) - 4px)'
+        },
+        boxShadow: {
+                soft: 'var(--shadow-soft)',
+                card: 'var(--shadow-card)',
+                playful: 'var(--shadow-playful)',
+                float: 'var(--shadow-float)',
+        },
+        keyframes: {
+                'accordion-down': {
+                        from: {
+                                height: '0'
                         },
-                        fontFamily: {
-                                sans: ["'Nunito'", 'sans-serif'],
-                                heading: ["'Fredoka'", 'cursive'],
-                        },
-                        borderRadius: {
-                                lg: 'var(--radius)',
-                                md: 'calc(var(--radius) - 2px)',
-                                sm: 'calc(var(--radius) - 4px)'
-                        },
-                        boxShadow: {
-                                soft: 'var(--shadow-soft)',
-                                card: 'var(--shadow-card)',
-                                playful: 'var(--shadow-playful)',
-                                float: 'var(--shadow-float)',
-                        },
-                        keyframes: {
-                                'accordion-down': {
-                                        from: {
-                                                height: '0'
-                                        },
 					to: {
 						height: 'var(--radix-accordion-content-height)'
 					}
