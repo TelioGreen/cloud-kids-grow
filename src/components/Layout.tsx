@@ -20,22 +20,23 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-primary/5">
+    <div className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-secondary/5 bg-pattern-waves">
       {/* Header */}
-      <header className="bg-card/80 backdrop-blur-sm border-b border-border/50 sticky top-0 z-50">
+      <header className="bg-card/95 backdrop-blur-md border-b border-border/30 sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-3 group">
               <div className="relative">
-                <Cloud className="h-8 w-8 text-primary" />
-                <div className="absolute -top-1 -right-1 h-3 w-3 bg-accent rounded-full"></div>
+                <Cloud className="h-10 w-10 text-primary transition-all duration-300 group-hover:scale-110 animate-float" />
+                <div className="absolute -top-1 -right-1 h-4 w-4 bg-accent rounded-full animate-bounce-gentle"></div>
+                <div className="absolute top-2 left-2 h-2 w-2 bg-secondary/60 rounded-full animate-pulse"></div>
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-lg text-foreground leading-tight">
+                <span className="font-bold text-xl text-foreground leading-tight transition-all duration-300 group-hover:text-primary">
                   Kidz on the Cloud
                 </span>
-                <span className="text-xs text-muted-foreground">
+                <span className="text-sm text-muted-foreground font-medium">
                   Early Learning Centre
                 </span>
               </div>
@@ -59,23 +60,23 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </nav>
 
             {/* Contact Button & Mobile Menu */}
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-3">
               <Button
                 variant="secondary"
                 size="sm"
-                className="hidden sm:flex items-center space-x-1"
+                className="hidden sm:flex items-center space-x-2 btn-float rounded-full px-6"
                 asChild
               >
                 <a href="tel:+27672983094">
                   <Phone className="h-4 w-4" />
-                  <span>Call Us</span>
+                  <span className="font-medium">Call Us</span>
                 </a>
               </Button>
 
               {/* Mobile Menu */}
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="outline" size="sm" className="md:hidden">
+                  <Button variant="outline" size="sm" className="md:hidden rounded-full border-2 hover:border-primary transition-all duration-300">
                     <Menu className="h-4 w-4" />
                   </Button>
                 </SheetTrigger>
@@ -117,13 +118,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <main>{children}</main>
 
       {/* Footer */}
-      <footer className="bg-card border-t border-border/50 mt-16">
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <footer className="bg-gradient-to-br from-card via-card to-primary/5 border-t border-border/30 mt-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-pattern-dots"></div>
+        <div className="container mx-auto px-4 py-12 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <Cloud className="h-6 w-6 text-primary" />
-                <span className="font-bold text-lg">Kidz on the Cloud</span>
+              <div className="flex items-center space-x-3 mb-6">
+                <Cloud className="h-8 w-8 text-primary animate-float" />
+                <span className="font-bold text-xl text-gradient">Kidz on the Cloud</span>
               </div>
               <p className="text-muted-foreground">
                 Nurturing young minds through play-based learning and holistic development
@@ -132,8 +134,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">Quick Links</h3>
-              <div className="space-y-2">
+              <h3 className="font-bold text-lg mb-6 text-foreground">Quick Links</h3>
+              <div className="space-y-3">
                 {navigation.slice(0, 4).map((item) => (
                   <Link
                     key={item.name}
@@ -147,8 +149,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">Contact Info</h3>
-              <div className="space-y-2 text-muted-foreground">
+              <h3 className="font-bold text-lg mb-6 text-foreground">Contact Info</h3>
+              <div className="space-y-3 text-muted-foreground">
                 <p>2066 Moray Street Ext. 10</p>
                 <p>Watervalspruit, Alberton</p>
                 <p>Gauteng, South Africa</p>
@@ -157,8 +159,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </div>
           </div>
           
-          <div className="border-t border-border/50 mt-8 pt-6 text-center text-muted-foreground">
-            <p>© 2024 Kidz on the Cloud Early Learning Centre. A registered non-profit organization.</p>
+          <div className="border-t border-border/30 mt-12 pt-8 text-center text-muted-foreground">
+            <p className="text-sm">© 2024 Kidz on the Cloud Early Learning Centre. A registered non-profit organization.</p>
           </div>
         </div>
       </footer>
