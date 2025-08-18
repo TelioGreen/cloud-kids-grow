@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
 	darkMode: ["class"],
@@ -17,8 +18,8 @@ export default {
 				'2xl': '1400px'
 			}
 		},
-		extend: {
-			colors: {
+                extend: {
+                        colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -62,17 +63,27 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
-			},
-			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
-			},
-			keyframes: {
-				'accordion-down': {
-					from: {
-						height: '0'
-					},
+                        },
+                        fontFamily: {
+                                sans: ["'Nunito'", 'sans-serif'],
+                                heading: ["'Fredoka'", 'cursive'],
+                        },
+                        borderRadius: {
+                                lg: 'var(--radius)',
+                                md: 'calc(var(--radius) - 2px)',
+                                sm: 'calc(var(--radius) - 4px)'
+                        },
+                        boxShadow: {
+                                soft: 'var(--shadow-soft)',
+                                card: 'var(--shadow-card)',
+                                playful: 'var(--shadow-playful)',
+                                float: 'var(--shadow-float)',
+                        },
+                        keyframes: {
+                                'accordion-down': {
+                                        from: {
+                                                height: '0'
+                                        },
 					to: {
 						height: 'var(--radix-accordion-content-height)'
 					}
@@ -130,5 +141,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+        plugins: [tailwindcssAnimate],
 } satisfies Config;

@@ -33,7 +33,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <div className="absolute top-2 left-2 h-2 w-2 bg-secondary/60 rounded-full animate-pulse"></div>
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-xl text-foreground leading-tight transition-all duration-300 group-hover:text-primary">
+                <span className="font-heading font-bold text-xl text-foreground leading-tight transition-all duration-300 group-hover:text-primary">
                   Kidz on the Cloud
                 </span>
                 <span className="text-sm text-muted-foreground font-medium">
@@ -125,7 +125,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <div>
               <div className="flex items-center space-x-3 mb-6">
                 <Cloud className="h-8 w-8 text-primary animate-float" />
-                <span className="font-bold text-xl text-gradient">Kidz on the Cloud</span>
+              <span className="font-heading font-bold text-xl text-gradient">Kidz on the Cloud</span>
               </div>
               <p className="text-muted-foreground">
                 Nurturing young minds through play-based learning and holistic development
